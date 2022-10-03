@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+    pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-<link href="login.css" rel="stylesheet" type="text/css"/>
-
 <style>
 body {
   background-color: linen;
@@ -28,7 +25,7 @@ form{
 }
 */
 label{
- width: 180px;
+ width: 200px;
   padding: 12px 0px;
   box-sizing: border-box;
  /* background-color: red;*/
@@ -52,6 +49,14 @@ font-size: 25px;
 ::placeholder {
 font-size: 17px;
 }
+option{
+font-size: 17px;
+
+}
+option[value]{
+font-size: 17px;
+
+}
 
 button{
  width: 100px;
@@ -66,6 +71,15 @@ border-radius: 12px;
   left: 220px;
 
 }
+select{
+width: 25%;
+  padding: 12px 20px;  /*12 for top dpwn */
+  margin: 8px 4px;
+  box-sizing: border-box;
+
+}
+
+
 a{
 color:blue;
 font-size: 20px;
@@ -77,43 +91,50 @@ margin:5px;
 
 
 </style>
+
 <meta charset="UTF-8">
-<title>login</title>
+<title>Register</title>
 </head>
 <body>
-<form   action="login" method="post">
-<h3 class="header"> Login</h3>
+<form action="insert2" method="post">
+<div>
+<h3> Address</h3>
 
-<label    for="email">Enter your email:</label>
-<input type="email"   id="email" placeholder="Enter your Email" name="email" required>
+<label for="city">City </label>
+<input  id="city" name="city" placeholder="Enter your City" required/>
+<br><br>
+
+<label for="streetName">Street Name </label>
+<input  id="streetName" name="streetName" placeholder="Enter your street Name" required/>
+
 <br>
 <br>
 
-<label  class="pass" for="pass"  >Password: </label>
-<input   type="password" id="pass" name="pass" placeholder="Enter your Password"/>
-<br>
-<br>
+<label for="buildingNumber">Building Number </label>
+<input  type="number" id="buildingNumber" name="buildingNumber" placeholder="Enter The building Number" required/>
+<br><br>
 
-<button type="submit"> Login</button>
+<label for="departmentNumber">Department Number </label>
+<input  type="number" id="departmentNumber" name="departmentNumber" placeholder="Enter The department Number" required/>
 <br>
 <br>
-<%
-boolean con = false;
-if(request.getAttribute("email")!=null){
-	request.setAttribute("emaill", null);
-	out.append("Email doesn't exist!!"+"\n"+"Try another email");
-	
-}
- if(request.getAttribute("pass")!=null){
-	request.setAttribute("pass", null);
-	out.append("Passwords is wrong !!"+"<br>"+"Try again"+
-	"<br>");
-	//request.getParameter("password")+"  "+request.getParameter("passwordPepeated")	);
-}
+</div>
+<button type="submit" >Submit</button>
+<br>
+<br>
+<% boolean con = false;
+
 
 %>
+
+
 </form>
+<script>
+function myFunction() {
+  alert("Hello! I am an alert box!");
+}
+</script>
 <br>
-<a href="JSPs/register.jsp">I don't have an account</a>
+<a href="logout">I already have an account</a>
 </body>
 </html>

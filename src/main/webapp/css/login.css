@@ -1,0 +1,15 @@
+
+.label1 label{
+	width: 220px;
+	height: 220px;
+	color: rgb(255, 255, 128);
+}
+h3{
+	color:red;
+}
+title{
+	position: center;
+}
+ input{
+ width:100%;
+ }
