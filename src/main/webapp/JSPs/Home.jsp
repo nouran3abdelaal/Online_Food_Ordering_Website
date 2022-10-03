@@ -57,7 +57,7 @@ font-size: 20px;
 
 .restName{
  position: absolute;
-  bottom: 25px;
+  bottom: 10px;
   right: 5px;
   font-size: 20px;
   background-color: #FCF5EB;
@@ -150,7 +150,16 @@ if(request.getSession().getAttribute("loggedIN") !=null && !(boolean)request.get
      <div>
       <form action="ViewRestaurants.jsp">  
      <p ><%=restaurants.get(i).getName() %></p>
-     <button type= "submit" class="restName" name="submit" value= <%=restaurants.get(i).getName() %>>View Menu</button>
+     <%String name =restaurants.get(i).getName();
+     System.out.println(name);
+     String [] temp = name.split(" ");
+     String finalName = "";
+     for(int j=0;j<temp.length-1;j++){
+    	 finalName += temp[i]+"_";
+     }
+     finalName += temp[temp.length-1];
+     %>
+     <button type= "submit" class="restName" name="submit" value= <%=finalName %>>View Menu</button>
       </form>
      </div>
      <%} %>

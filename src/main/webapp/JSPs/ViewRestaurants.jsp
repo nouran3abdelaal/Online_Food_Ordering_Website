@@ -210,7 +210,8 @@ if(request.getAttribute("order")!=null){
 	 System.out.println("submit"+order);
 
 }
-System.out.println("submit"+submit);
+submit = submit.replaceAll("_", " ");
+System.out.println("submit  "+submit);
 
 %>
 
@@ -268,7 +269,7 @@ System.out.println("submit"+submit);
 	  if(restaurants.get(i).getName().equals(submit)){
 		  Menu menu = restaurants.get(i).getMenu();
            items =menu.getMenu(); 
-           System.out.println("items"+items.toString());
+           System.out.println("items "+items.toString());
 	  }
 	 
   }
